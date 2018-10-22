@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProjectDetailsExctractorTests.cs" />
+    <Compile Include="ProjectExtractor.cs" />
     <Compile Include="SolutionExtractorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NITRPackager.Extractors;
 using NITRPackager.Models;
@@ -14,38 +13,6 @@ namespace NITRPackager.Tests
     public static class Constants
     {
         public const string  SolutionFileLocation = @"C:\Users\Richard\source\repos\NITRPackager\SampleSolution\DownloadFromNetTaskFactory\DownloadFromNetTaskFactory.sln";
-    }
-
-    [TestClass]
-    public class ProjectExtractor
-    {
-
-        [TestInitialize]
-        public void Initialise()
-        {
-
-        }
-
-        [TestMethod]
-        public void ProjectExtractorNoExceptionExpected()
-        {
-        }
-
-        [TestMethod]
-        public void ExtractCSharpFiles()
-        {
-            var fileName =@"C:\Users\Richard\source\repos\NITRPackager\SampleSolution\DownloadFromNetTaskFactory\DownloadFromNetTaskFactory\DownloadFromNetTaskFactory.csproj";
-
-            XDocument doc = XDocument.Load(fileName);
-
-            //get all csharp files.
-            var csharpFiles =  doc.Descendants().Where(x => x.Name.LocalName.Equals("Compile"));
-            foreach (XElement csharpFile in csharpFiles)
-            {
-                Console.WriteLine(csharpFile.FirstAttribute.Value);
-            }
-        }
-        
     }
 
     [TestClass]
